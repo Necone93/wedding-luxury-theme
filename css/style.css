@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    background-image: url("/assets/bckg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+.hanging-hearts {
+    position: relative;
+    top: 0;
+    left: 10%;
+    position: fixed;
+    z-index: 999;
+    max-width: 150px;
+    height: auto;
+      opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 10;
+}
+.hanging-hearts.prikazi {
+    opacity: 1;
+}
+.slika-para {
+    max-width: 300px;
+    height: auto;
+    width: auto;
+}
+.prvitekst {
+    font-family: 'Alex Brush';
+    color: #d4af37;
+    font-size: 3rem;
+}
+.okrugla-slika {
+    max-width: 360px;
+    height: auto;
+    position: relative;
+    margin: 0 auto;
+}
+.okrugla-slika img {
+      width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.imepara {
+    font-family: 'Playfair Display';
+    color: #d4af37;
+    text-shadow: 3px 3px 3px black;
+    font-size: 3rem;
+    position: absolute;
+      top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.datum-svadbe {
+    color: #ffe89c;
+    font-family: 'Lato';
+}
+#timer {
+    color: #fff1c5;
+}
+#pozivnica {
+    width: 100%;
+    height: 20rem;
+    background-color: rgba(255, 255, 255, 0.852);
+}
+.drugitekst {
+       font-size: 2rem;
+    max-width: 100%;
+    word-wrap: break-word;
+    font-family: "Playwrite AU QLD", cursive;
+    font-weight: 100;
+    text-align: center;
+}
+.box {
+    background-color: rgba(255, 255, 255, 0.63);
+    border-radius: 10px;
+    margin: 5px;
+}
