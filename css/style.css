@@ -98,8 +98,23 @@ body {
     padding: 2rem;
     border-radius: 10px;
 }
+form textarea {
+  width: 50%;
+}
+form {
+    font-family: 'Playfair Display';
+}
+.btn {
+      background-color: #c49b27;      /* zlatna boja */
+  color: white;
+  border: none;
+  font-weight: bold;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
 .input-line {
-        width: 50%;
+    width: 50%;
     border: none;
     border-bottom: 2px solid black;
     background: transparent;
