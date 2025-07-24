@@ -3,7 +3,7 @@
 }
 body {
     margin: 0;
-    background-image: url("/assets/bckg.jpg");
+    background-image: url("../assets/bckg.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -75,8 +75,18 @@ body {
     font-weight: 100;
     text-align: center;
 }
+.h1-organizacija::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: #ffe89c; 
+  width: 60%;
+  margin: 0.5rem auto;
+}
+
 .box {
     background-color: rgba(255, 255, 255, 0.63);
     border-radius: 10px;
     margin: 5px;
+    max-width: 400px;
 }
