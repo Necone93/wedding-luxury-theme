@@ -1,124 +1,216 @@
-* {
-    box-sizing: border-box;
-}
-body {
-    margin: 0;
-    background-image: url("../assets/bckg.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    overflow-x: hidden;
-}
-.hanging-hearts {
-    position: relative;
-    top: 0;
-    left: 10%;
-    position: fixed;
-    z-index: 999;
-    max-width: 150px;
-    height: auto;
-      opacity: 0;
-  transition: opacity 0.5s ease;
-  z-index: 10;
-}
-.hanging-hearts.prikazi {
-    opacity: 1;
-}
-.slika-para {
-    max-width: 300px;
-    height: auto;
-    width: auto;
-}
-.prvitekst {
-    font-family: 'Alex Brush';
-    color: #d4af37;
-    font-size: 3rem;
-}
-.okrugla-slika {
-    max-width: 360px;
-    height: auto;
-    position: relative;
-    margin: 0 auto;
-}
-.okrugla-slika img {
-      width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.imepara {
-    font-family: 'Playfair Display';
-    color: #d4af37;
-    text-shadow: 3px 3px 3px black;
-    font-size: 3rem;
-    position: absolute;
-      top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.datum-svadbe {
-    color: #ffe89c;
-    font-family: 'Lato';
-}
-#timer {
-    color: #fff1c5;
-}
-#pozivnica {
-    width: 100%;
-    height: auto;
-    background-color: rgba(255, 255, 255, 0.852);
-}
-.drugitekst {
-       font-size: 2rem;
-    max-width: 100%;
-    word-wrap: break-word;
-    font-family: "Playwrite AU QLD", cursive;
-    font-weight: 100;
-    text-align: center;
-}
-.h1-organizacija::after {
-  content: "";
-  display: block;
-  height: 2px;
-  background-color: #ffe89c; 
-  width: 60%;
-  margin: 0.5rem auto;
+/* ===== LUXURY BLACK & GOLD ===== */
+:root{
+  --bg:#0b0c0f;               /* gotovo crna */
+  --panel:#121318;            /* tamna za boxeve */
+  --ink:#eae7dc;              /* svetla za tekst */
+  --gold:#d4af37;             /* zlatna */
+  --gold-2:#b8892d;           /* tamnija zlatna */
+  --gold-soft:#c8a96a;        /* mehka zlatna */
 }
 
-.box {
-    background-color: rgba(255, 255, 255, 0.63);
-    border-radius: 10px;
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  background-image: url("/assets/bckg.jpg");
+  color: var(--ink);
+  font-family: 'Cormorant Garamond', serif;
+  overflow-x:hidden;
 }
-.gold-line {
-    width: 100%;
+
+/* HERO ram + ime */
+.okrugla-slika{ max-width:460px; position:relative; margin:0 auto; }
+.okrugla-slika img{ width:100%; height:auto; display:block; opacity:.75; }
+.imepara{
+  --nudge-x: 6px; --nudge-y: -4px;
+  position:absolute; top:50%; left:50%;
+  transform: translate(-50%,-50%) translate(var(--nudge-x),var(--nudge-y));
+  margin:0; text-align:center; line-height:1.06;
+  font-family:'Great Vibes', cursive;
+  font-size: clamp(2.6rem, 6.6vw, 4.2rem);
+  font-weight:400;
+
+  /* zlatni gradient tekst + suptilna aura */
+  background: linear-gradient(140deg, #fff6cc 0%, var(--gold) 35%, var(--gold-2) 70%, #7a5a1a 100%);
+  -webkit-background-clip: text; background-clip:text; color:transparent;
+  text-shadow: 0 0 12px rgba(212,175,55,.18), 0 1px 0 rgba(0,0,0,.4);
 }
-.forma form {
-    background-color: rgba(255, 255, 255, 0.504);
-    max-width: 500px;
-    margin: 2rem auto;
-    padding: 2rem;
-    border-radius: 10px;
+
+.par{ display:block; width:100%; max-width:360px; height:auto; }
+
+/* suptilni luks efekat na fotografiji */
+.photo-gold-soft{
+  border-radius:16px;
+  outline:2px solid rgba(212,175,55,.28);
+  outline-offset:8px;
+  box-shadow: 0 18px 36px rgba(0,0,0,.35);
+  filter: saturate(1.03) contrast(1.04);
+  transition: transform .25s ease, box-shadow .25s ease;
 }
-form textarea {
-  width: 50%;
+.photo-gold-soft:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 24px 44px rgba(0,0,0,.45);
 }
-form {
-    font-family: 'Playfair Display';
+
+/* datum ispod fotke */
+.datum-svadbe{
+  font-family:'Playfair Display', serif;
+  color: var(--gold-soft);
+  letter-spacing:.02em;
 }
-.btn {
-      background-color: #c49b27;      /* zlatna boja */
-  color: white;
-  border: none;
-  font-weight: bold;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+
+/* POZIVNICA panel */
+#pozivnica{
+  width:100%;
+  max-width:900px;
+  margin: 0 auto 1.5rem;
+  padding: 2rem 1.5rem;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  border: 1px solid rgba(212,175,55,.22);
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
 }
-.input-line {
-    width: 50%;
-    border: none;
-    border-bottom: 2px solid black;
-    background: transparent;
-    padding: 5px;
-    outline: none;
-    font-size: 1rem;
+.pozivnica-tekst p{
+  font-family:'Great Vibes', cursive;
+  font-size: clamp(1.8rem, 4.5vw, 2.4rem);
+  color: var(--gold-soft);
+  margin:0;
+}
+
+/* ORGANIZACIJA */
+.h1-organizacija{
+  font-family:'Playfair Display', serif;
+  font-weight:700;
+  color: var(--gold);
+  letter-spacing:.06em;
+  text-transform: uppercase;
+}
+.org-datum{
+  font-family:'Playfair Display', serif;
+  color: var(--gold-soft);
+}
+
+/* COUNTDOWN (isti raspored, luks boje) */
+.cd2-title{
+  font-family:'Playfair Display', serif;
+  text-transform: uppercase;
+  letter-spacing:.08em;
+  color: var(--gold);
+  font-size: clamp(1.2rem, 2.8vw, 2.2rem);
+  margin-bottom:.6rem;
+}
+.cd2-grid{
+  display:flex; gap: clamp(24px, 6vw, 80px);
+  justify-content:center; align-items:flex-start;
+}
+.cd2-seg{ text-align:center; }
+.cd2-num{
+  font-family:'Playfair Display', serif;
+  font-size: clamp(2.2rem, 7vw, 4.2rem);
+  line-height:1; color: var(--gold);
+  text-shadow: 0 0 10px rgba(212,175,55,.22);
+}
+.cd2-lab{
+  margin-top:.35rem; font-family:'Cormorant Garamond', serif;
+  font-size: clamp(.9rem, 2vw, 1.15rem);
+  color: var(--gold-soft);
+}
+@media (max-width:575.98px){ .cd2-grid{ gap:22px; } }
+
+/* BOX-evi */
+.box{
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  border: 1px solid rgba(212,175,55,.18);
+  border-radius: 14px;
+  color: var(--ink);
+  padding: 1.2rem 1rem;
+  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.box:hover{ transform: translateY(-3px); box-shadow: 0 18px 42px rgba(0,0,0,.45); }
+.box h2{
+  font-family:'Playfair Display', serif; font-weight:700; color: var(--gold);
+  margin-top:.2rem; margin-bottom:.35rem;
+}
+.box h3{ font-family:'Playfair Display', serif; color: var(--gold-soft); margin:0; }
+.box p{ margin:.35rem 0; }
+
+.org-ikonica{
+  display:block; width: clamp(52px, 12vw, 84px);
+  height:auto; object-fit:contain; margin: 0 auto .35rem;
+}
+
+.strelica{ color: var(--gold); margin-bottom:.2rem; }
+.map-link{
+  font-family:'Playfair Display', serif;
+  font-weight:600; font-size:1rem;
+  color: var(--gold);
+  text-decoration:none;
+  border-bottom: 1px solid rgba(212,175,55,.45);
+  padding-bottom:2px;
+  transition: opacity .2s ease, border-color .2s ease;
+}
+.map-link:hover{ opacity:.9; border-color: var(--gold); }
+
+/* RSVP */
+.forma{
+  max-width:800px; margin: 2rem auto 3rem;
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  border: 1px solid rgba(212,175,55,.18);
+  border-radius:14px; padding:1.6rem;
+  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+}
+.rsvp-rok{ color: var(--gold-soft); font-family:'Playfair Display', serif; font-size:1.25rem; }
+label{ font-size:1.1rem; }
+.input-line, textarea, input[type="number"]{
+  width: 100%; max-width: 480px;
+  background: transparent; color: var(--ink);
+  border: none; border-bottom:2px solid rgba(255,255,255,.2);
+  padding: 6px 2px; outline:none;
+}
+.input-line:focus, textarea:focus, input[type="number"]:focus{
+  border-bottom-color: var(--gold);
+}
+.btn-gold{
+  background: linear-gradient(135deg, var(--gold), var(--gold-2));
+  color:#0b0c0f; font-weight:700;
+  border:none; border-radius:8px;
+  padding:.6rem 1.2rem; cursor:pointer;
+  box-shadow: 0 8px 24px rgba(212,175,55,.25);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.btn-gold:hover{ transform: translateY(-1px); box-shadow:0 12px 32px rgba(212,175,55,.35); }
+
+/* INTRO overlay (lux) */
+.intro-overlay{
+  position:fixed; inset:0; z-index:9999;
+  display:grid; place-items:center; padding:2rem;
+}
+.intro-overlay.lux{ background: #0a0b0e; }
+.intro-inner{ text-align:center; }
+.intro-title{
+  font-family:'Great Vibes', cursive; font-weight:400;
+  font-size: clamp(3rem, 8vw, 6rem); line-height:1.08; margin:0 0 .25rem;
+  background: linear-gradient(140deg, #fff6cc 0%, var(--gold) 35%, var(--gold-2) 70%, #7a5a1a 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  background-size: 220% 220%;
+  animation:
+    introReveal .7s ease-out both,
+    gradientSlide 4s ease-in-out .2s infinite alternate,
+    introGlow 1.6s ease-in-out .4s both;
+}
+.intro-sub{
+  font-family:'Playfair Display', serif;
+  font-size: clamp(1rem, 2.4vw, 1.25rem);
+  color: var(--gold-soft); opacity:.9; margin:0;
+  animation: introReveal .7s ease-out .15s both;
+}
+.intro-overlay.is-done{ transition: opacity .6s ease, visibility .6s ease; opacity:0; visibility:hidden; pointer-events:none; }
+
+@keyframes introReveal{ from{opacity:0; transform:translateY(8px); filter:blur(2px);} to{opacity:1; transform:none; filter:none;} }
+@keyframes gradientSlide{ 0% {background-position:0% 50%;} 100%{background-position:100% 50%;} }
+@keyframes introGlow{ 0%{text-shadow:0 0 0 rgba(212,175,55,0);} 35%{text-shadow:0 0 16px rgba(212,175,55,.28);} 100%{text-shadow:0 0 0 rgba(212,175,55,0);} }
+
+@media (prefers-reduced-motion: reduce){
+  .intro-title,.intro-sub{ animation:none; }
 }

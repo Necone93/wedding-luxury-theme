@@ -1,7 +1,23 @@
 {
-  "naslov": "Naš dan, ali i vaš - <br> jer ste deo naše priče",
-  "imePara": "Jovana <br> & <br> Darko",
-  "datumSvadbe": "16. oktobar",
-  "drugitekst": "Dragi prijatelji i porodico, <br>S velikom radošću i ljubavlju vas pozivamo <br>da budete deo najvažnijeg dana u našem životu.",
-  "slikaPara": "assets/parr.png"
+  "imePara": "Ana <br> & <br> Marko",
+  "slikaPara": "assets/par.png",
+
+  "pozivnicaTekst": "Dragi prijatelji i porodico,<br>S velikom radošću i ljubavlju vas pozivamo<br>da budete deo najvažnijeg dana u našem životu.",
+
+  "datumSvadbe": "Subota, 16. oktobar",
+  "organizacijaDatum": "Subota, 16. oktobar",
+
+  "rsvpRok": "Molimo da vaš dolazak potvrdite do 16. septembra",
+  "rsvpEmail": "primer@gmail.com",
+
+  "countdown": {
+    "title": "Radujemo se vašem dolasku",
+    "targetISO": "2025-10-16T13:00:00+02:00",
+    "labels": {
+      "days":   { "one": "Dan",     "many": "Dana" },
+      "hours":  { "one": "Sat",     "many": "Sati" },
+      "minutes":{ "one": "Minut",   "many": "Minuta" },
+      "seconds":{ "one": "Sekunda", "many": "Sekundi" }
+    }
+  }
 }
